@@ -75,7 +75,7 @@ struct StatusView: View {
             }
         }
         .onAppear { client.start() }
-        .onChange(of: scenePhase) { _, newPhase in
+        .onChange(of: scenePhase) { newPhase in
             switch newPhase {
             case .active: client.start()
             case .background: client.stop()
